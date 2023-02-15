@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ghpaterson/news-summary#readme",
   "dependencies": {
+    "jest": "^29.4.3",
     "jest-environment-jsdom": "^29.4.3"
   }
 }
