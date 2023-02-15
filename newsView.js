@@ -5,6 +5,10 @@ class NewsView {
   }
 
   displayNews() {
+    document.querySelectorAll(".news-item").forEach((item) => {
+      item.remove();
+    });
+
     const news = this.model.getNews();
 
     news.forEach((item) => {
