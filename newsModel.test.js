@@ -1,10 +1,12 @@
+const NewsModel = require("./newsModel");
+
 describe("News model", () => {
   it("creates and empty array", () => {
     const model = new NewsModel();
     expect(model.getNews()).toEqual([]);
   });
 
-  xit("returns an array of news articles", () => {
+  it("returns an array of news articles", () => {
     const model = new NewsModel();
     const itemOne = "Dog learns to pay taxes";
     const itemTwo = "Are we all doomed?";
