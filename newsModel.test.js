@@ -15,11 +15,11 @@ describe("News model", () => {
     expect(model.getNews()).toEqual([itemOne, itemTwo]);
   });
 
-  xit("resets the array of news articles", () => {
+  it("resets the array of news articles", () => {
     const model = new NewsModel();
     const itemOne = "Are trees smarter than us?";
     model.addNews(itemOne);
-    model.reset();
+    model.resetNews();
     expect(model.getNews()).toEqual([]);
   });
 });
