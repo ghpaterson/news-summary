@@ -1,6 +1,7 @@
 class NewsView {
-  constructor(model) {
+  constructor(model, client) {
     this.model = model;
+    this.client = client;
     this.mainContainerEl = document.querySelector("#main-container");
   }
 
@@ -14,8 +15,14 @@ class NewsView {
     news.forEach((item) => {
       const newNews = document.createElement("div");
       newNews.className = "news-item";
-      newNews.textContent = item;
+      newNews.textContent = item.webTitle;
       this.mainContainerEl.append(newNews);
+    });
+  }
+  displayNewsFromApi() {
+    this.client.loadHeadlines((callback) => {
+      this.model.setNews(callback);
+      this.displayNews();
     });
   }
 }
