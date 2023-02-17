@@ -14,3 +14,4 @@ const view = new NewsView(model, client);
 // model.addNews(itemTwo);
 // view.displayNews();
 // view.displayNews();
+view.displayNewsFromApi();

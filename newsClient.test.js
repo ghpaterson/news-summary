@@ -24,4 +24,17 @@ describe("NewsClient class", () => {
       done();
     });
   });
+
+  it("loadHeadlines catches fetch error", (done) => {
+    const client = new NewsClient();
+
+    fetch.mockRejectedValue("Something went wrong");
+    client.loadHeadlines(
+      () => {},
+      (error) => {
+        expect(error).toBe("Something went wrong");
+        done();
+      }
+    );
+  });
 });
