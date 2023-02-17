@@ -48,4 +48,11 @@ describe("A test for the news website", () => {
     expect(client.loadHeadlines).toHaveBeenCalled();
     expect(model.getNews()).toEqual([itemOne, itemTwo]);
   });
+
+  it("displays error message on page", () => {
+    view.displayError();
+    expect(document.querySelector("#error").textContent).toBe(
+      "Something went wrong"
+    );
+  });
 });
